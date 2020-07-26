@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+    <img src="<%=book.img_url%>" alt="no" srcset=""> 
+    <p><%= book.auther%></p>
+    <p><%= book.title %></p>
+    <p><%= book.description %></p>
+    <form action="/update/<%=book.id%>?_method=put" method="POST">
+        <input type="text" name="img_url" id="" value="<%= book.img_url%>">
+        <input type="text" name="auther" id="" value="<%= book.auther%>">
+        <input type="text" name="title" value="<%= book.title%>" id="">
+        <textarea name="description" id="" cols="30" rows="10" ><%=book.description%></textarea>
+        <input type="submit" value="update">
+    </form>
+    <form action="/delete/<%=book.id%>?_method=delete" method="POST">
+        <input type="submit" value="delete">
+
+    </form>
+</section>
+</body>
+</html>
